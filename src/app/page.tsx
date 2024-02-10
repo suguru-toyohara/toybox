@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useRouter } from 'next/navigation';
 import { Avatar, Box, ButtonBase } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
+import GitHubCalendar from 'react-github-calendar';
 function SocialLink({Icon, id, href}: {Icon: React.ElementType, id: string, href: string}) {
   return (
     <a href={href} target='_blank'>

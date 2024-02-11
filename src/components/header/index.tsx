@@ -4,6 +4,7 @@ import HandymanIcon from '@mui/icons-material/Handyman';
 import Tab from "./Tab";
 import Top from "./Top";
 import FullDivider from "@/components/misc/FullDivider";
+import DescriptionIcon from '@mui/icons-material/Description';
 
 function HeaderSection({children}: {children: React.ReactNode}){
   return (
@@ -20,7 +21,7 @@ export default function Header(){
         <Top title="ToyBox" href="/" Icon={HandymanIcon} />
       </HeaderSection>
       <HeaderSection>
-        <Tab title="Overview" href="/" />
+        <Tab title="Overview" href="/" Icon={DescriptionIcon}/>
       </HeaderSection>
       <FullDivider />
     </header>

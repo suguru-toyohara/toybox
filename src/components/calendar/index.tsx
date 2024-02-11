@@ -37,7 +37,7 @@ export default function GithubActivityCalendar() {
   }, []); // 空の依存配列でコンポーネントのマウント時にのみ実行
 
   return (
-    <Card className="bg-black rounded-lg p-6">
+    <Card className="rounded-lg p-6" style={{backgroundColor: "#000"}}>
       <ActivityCalendar 
         data={activity} 
         loading={isLoading} 

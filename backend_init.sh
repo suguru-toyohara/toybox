@@ -11,7 +11,7 @@ fi
 python -V
 
 if [ -d "./$directory/venv" ]; then
-  rm -ri ./$directory/venv
+  rm -r ./$directory/venv
 fi
 
 python3 -m venv ./$directory/venv

@@ -1,0 +1,9 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/cloudrun/github-activity-api:$TAG_NAME', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'asia-northeast1-docker.pkg.dev/$PROJECT_ID/cloudrun/github-activity-api:$TAG_NAME']
+images:
+- asia-northeast1-docker.pkg.dev/$PROJECT_ID/cloudrun/github-activity-api:$TAG_NAME

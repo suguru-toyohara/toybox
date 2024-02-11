@@ -8,6 +8,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  /* TODO: もちょっと明るく＋Headerは暗く */
   background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(30,30,40,1) 100%);
 
 }

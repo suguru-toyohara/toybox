@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Header from "@/components/header";
-import "./globals.css";
-import Footer from "@/components/footer";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import Header from '@/components/header';
+import './globals.css';
+import Footer from '@/components/footer';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "toybox",
-  description: "suguru-toyoharaのポートフォリオサイト",
+  title: 'toybox',
+  description: 'suguru-toyoharaのポートフォリオサイト',
 };
 
 export default function RootLayout({
@@ -18,7 +18,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      
       <body className={inter.className}>
         <Header />
         {children}

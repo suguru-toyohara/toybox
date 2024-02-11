@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { Box } from "@mui/material";
 import { usePathname } from "next/navigation";
 import HoverButton from "./HoverButton";

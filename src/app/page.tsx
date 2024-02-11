@@ -1,42 +1,14 @@
 'use client';
 import Image from 'next/image';
-import PropTypes from 'prop-types';
 import { useRouter } from 'next/navigation';
-import { Avatar, Box, ButtonBase } from '@mui/material';
+import { Avatar } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import GitHubCalendar from 'react-github-calendar';
-function SocialLink({Icon, id, href}: {Icon: React.ElementType, id: string, href: string}) {
-  return (
-    <a href={href} target='_blank'>
-      <ButtonBase >
-        <Box className="flex">
-          <Box className="w-6 mt-4">
-            <Icon className='text-2xl'/>
-          </Box>
-          <span className="text-lg m-4">{id}</span>
-        </Box>
-      </ButtonBase>
-    </a>
-  );
-}
-
-SocialLink.propTypes = {
-  Icon: PropTypes.elementType.isRequired,
-  id: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-};
+import SocialLink from '@/components/misc/SocialLink';
+import SectionTitle from '@/components/misc/SectionTitle';
 
 function BlueSkyIcon() {
   return(
     <Image src="/bsky.svg" alt="bluesky" width={100} height={100}/>
-  );
-}
-
-function SectionTitle({title}: {title: string}) {
-  return (
-    <Box sx={{ borderBottom: "1px solid #FFF", padding: "0px 2rem" , margin: "2rem 0px"}} >
-      <h2 className="text-2xl">{title}</h2>
-    </Box>
   );
 }
 

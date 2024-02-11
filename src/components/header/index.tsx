@@ -1,3 +1,4 @@
+'use client';
 import { Box, Button, Divider, Typography } from "@mui/material";
 import HandymanIcon from '@mui/icons-material/Handyman';
 import HoverButton from "./HoverButton";

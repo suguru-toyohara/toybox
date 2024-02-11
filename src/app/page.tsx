@@ -52,11 +52,6 @@ export default function Home() {
       <SectionTitle title="Contacts" />
       <SocialLink Icon={GitHubIcon} id="suguru-toyohara" href="https://github.com/suguru-toyohara" />
       <SocialLink Icon={BlueSkyIcon} id="@simeji.aceof.technology" href="https://bsky.app/profile/simeji.aceof.technology" />
-      {/*
-      <Box className="m-16 w-96">
-        <Divider sx={{ border: "1px solid #FFF"}} />
-      </Box>
-      */}
       <SectionTitle title="Github Contribution" />
       {/* <GitHubCalendar username='suguru-toyohara' /> */}
     </main>

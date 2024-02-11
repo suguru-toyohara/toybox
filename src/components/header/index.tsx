@@ -1,9 +1,9 @@
 'use client';
-import { Box, Button, Divider, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import HandymanIcon from '@mui/icons-material/Handyman';
-import HoverButton from "./HoverButton";
 import Tab from "./Tab";
 import Top from "./Top";
+import FullDivider from "@/components/misc/FullDivider";
 
 function HeaderSection({children}: {children: React.ReactNode}){
   return (
@@ -22,9 +22,7 @@ export default function Header(){
       <HeaderSection>
         <Tab title="Overview" href="/" />
       </HeaderSection>
-      <Box sx={{ width: "100%" }}>
-        <Divider sx={{ border: "1px solid #CCC"}} />
-      </Box>
+      <FullDivider />
     </header>
   );
 }

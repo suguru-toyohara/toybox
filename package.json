@@ -7,14 +7,21 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write src/**/*.{ts,tsx}",
     "pages:build": "npx @cloudflare/next-on-pages",
     "pages:preview": "npm run pages:build && wrangler pages dev .vercel/output/static --compatibility-date=2024-02-08 --compatibility-flag=nodejs_compat",
     "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static --project-name=toybox-aceoftechnology"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.9",
+    "@mui/material": "^5.15.9",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-activity-calendar": "^2.2.7",
+    "react-dom": "^18",
+    "react-github-calendar": "^4.1.2"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.8.6",
@@ -27,6 +34,7 @@
     "eslint-config-next": "14.1.0",
     "eslint-plugin-next-on-pages": "^1.8.6",
     "postcss": "^8",
+    "prettier": "3.2.5",
     "tailwindcss": "^3.3.0",
     "typescript": "^5",
     "vercel": "^33.5.0",

@@ -28,4 +28,4 @@ async function fetch(request: Request, env: Env, ctx: ExecutionContext): Promise
 	return new Response('Hello World!');
 }
 
-export default fetch;
+export default { fetch }

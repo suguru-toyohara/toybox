@@ -10,7 +10,9 @@
     "format": "prettier --write src/**/*.{ts,tsx}",
     "pages:build": "npx @cloudflare/next-on-pages",
     "pages:preview": "npm run pages:build && wrangler pages dev .vercel/output/static --compatibility-date=2024-02-08 --compatibility-flag=nodejs_compat",
-    "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static --project-name=toybox-aceoftechnology"
+    "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static --project-name=toybox-aceoftechnology",
+    "gh-cache:deploy": "wrangler deploy --config gh-cache-worker.toml",
+    "gh-cache:preview": "wrangler dev --config gh-cache-worker.toml"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",

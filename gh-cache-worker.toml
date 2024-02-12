@@ -1,5 +1,5 @@
 name = "github-activity-cache"
-main = "src/index.ts"
+main = "backend/workers/github-activity-cache/index.ts"
 compatibility_date = "2024-02-08"
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)

@@ -8,6 +8,8 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+import route from "./router";
+
 export interface Env {
 	// Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
 	// MY_KV_NAMESPACE: KVNamespace;
@@ -25,7 +27,8 @@ export interface Env {
 	// MY_QUEUE: Queue;
 }
 async function fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-	return new Response('Hello World!');
+  const action = route(request)
+	return action(request)
 }
 
 export default { fetch }

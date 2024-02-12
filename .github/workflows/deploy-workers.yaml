@@ -41,5 +41,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_WORKER_API_TOKEN }}
           accountID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy --config gh-cache-worker.toml
-
+          command: deploy --config worker-wrangler.toml

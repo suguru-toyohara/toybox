@@ -6,7 +6,7 @@ compatibility_date = "2024-02-08"
 # Note: Use secrets to store sensitive data.
 # Docs: https://developers.cloudflare.com/workers/platform/environment-variables
 [vars]
-
+CLOUDRUN_ENDPOINT="https://github-activity-api-kr2nma3iva-an.a.run.app"
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/workers/runtime-apis/kv
 

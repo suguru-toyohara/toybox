@@ -26,6 +26,7 @@ export interface Env {
 	//
 	// Example binding to a Queue. Learn more at https://developers.cloudflare.com/queues/javascript-apis/
 	// MY_QUEUE: Queue;
+  CLOUDRUN_ENDPOINT: string
 }
 
 function checkMethod(value: string): methodType {
@@ -41,7 +42,7 @@ async function fetch(request: Request, env: Env, ctx: ExecutionContext): Promise
     return new Response("bad request.", {status: 400})
   }
   const action = router(endpoint, request.method as methodType)
-	return action(request)
+	return action(request, env)
 }
 
 export default { fetch }

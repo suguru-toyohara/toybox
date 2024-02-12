@@ -5,7 +5,6 @@ import { Avatar } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SocialLink from '@/components/misc/SocialLink';
 import SectionTitle from '@/components/misc/SectionTitle';
-import ActivityCalendar from 'react-activity-calendar';
 import GithubActivityCalendar from '@/components/calendar';
 
 function BlueSkyIcon() {
@@ -29,7 +28,7 @@ export default function Home() {
         href="https://bsky.app/profile/simeji.aceof.technology"
       />
       <SectionTitle title="Github Contribution" />
-      <GithubActivityCalendar />
+      <GithubActivityCalendar username='suguru-toyohara'/>
     </main>
   );
 }

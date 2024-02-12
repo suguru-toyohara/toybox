@@ -4,7 +4,7 @@ import { Box, Divider } from "@mui/material";
 export default function FullDivider() {
   return (
     <Box sx={{ width: "100%" }}>
-      <Divider sx={{ border: "1px solid #CCC"}} />
+      <Divider sx={{ border: "1px solid #333"}} />
     </Box>
   );
 }

@@ -1,0 +1,44 @@
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: read
+      deployments: write
+      statuses: write
+
+    name: Publish to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: change_deploy_env
+        id: deploy_env
+        run: |
+          if [[ ${{ github.event_name }} == 'push' ]]; then
+            echo -n "deploy=production" >> $GITHUB_OUTPUT
+          else
+            echo -n "deploy=development" >> $GITHUB_OUTPUT
+          fi
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          cache: 'npm'
+          node-version-file: 'package.json'
+
+      - name: Install Packages
+        run: npm install
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_WORKER_API_TOKEN }}
+          accountID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config worker-wrangler.toml

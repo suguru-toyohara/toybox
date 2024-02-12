@@ -5,6 +5,7 @@ import Tab from "./Tab";
 import Top from "./Top";
 import FullDivider from "@/components/misc/FullDivider";
 import DescriptionIcon from '@mui/icons-material/Description';
+import AppsIcon from '@mui/icons-material/Apps';
 
 function HeaderSection({children}: {children: React.ReactNode}){
   return (

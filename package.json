@@ -12,7 +12,7 @@
     "pages:preview": "npm run pages:build && wrangler pages dev .vercel/output/static --compatibility-date=2024-02-08 --compatibility-flag=nodejs_compat",
     "pages:deploy": "npm run pages:build && wrangler pages deploy .vercel/output/static --project-name=toybox-aceoftechnology",
     "worker:deploy": "wrangler deploy --config worker-wrangler.toml",
-    "worker:preview": "wrangler dev --config worker-wrangler-local.toml"
+    "worker:preview": "wrangler dev --config worker-wrangler.local.toml"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",

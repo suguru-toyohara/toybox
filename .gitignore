@@ -55,3 +55,4 @@ build/
 
 # wrangler
 .wrangler/
+*.local.toml

@@ -1,6 +1,9 @@
 name = "simeji-toybox-backend-workers"
 main = "backend/workers/index.ts"
 compatibility_date = "2024-02-08"
+kv_namespaces = [
+  { binding = "GH_ACTIVITY_KV", id = "63db761f19014e3cbf4df7ec25495db3" }
+]
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.

@@ -1,5 +1,5 @@
 'use client';
-import { Box, ButtonBase } from '@mui/material';
+import { Box, ButtonBase, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
 
 export default function SocialLink({Icon, id, href}: {Icon: React.ElementType, id: string, href: string}) {
@@ -10,7 +10,7 @@ export default function SocialLink({Icon, id, href}: {Icon: React.ElementType, i
           <Box className="w-6 mt-4">
             <Icon className='text-2xl'/>
           </Box>
-          <span className="text-lg m-4">{id}</span>
+          <Typography variant='body1' sx={{ fontSize: "1.125rem", margin: "1rem"}}>{id}</Typography>
         </Box>
       </ButtonBase>
     </a>

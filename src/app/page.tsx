@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center p-24 min-h-screen">
       <Typography variant='h1' noWrap sx={{ fontSize: "2.25rem"}}>Welcome to the toybox!</Typography>
-      <Typography variant='body1' noWrap sx={{ fontSize: "1.125rem", margin: "1rem"}} className="text-lg m-4"> This is a portfolio site of suguru-toyohara(simeji).</Typography>
+      <Typography variant='body1' noWrap sx={{ fontSize: "0.875rem", margin: "1rem"}} className="text-lg m-4"> This is a portfolio site of suguru-toyohara(simeji).</Typography>
       <Avatar sx={{ width: 100, height: 100, bgcolor: 'black', border: '1px solid #CCC' }} className="m-8">
         <Image src="/icon.svg" alt="icon" width={100} height={100} />
       </Avatar>

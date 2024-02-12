@@ -34,7 +34,6 @@ export default function GithubActivityCalendar({username}: {username: string}) {
   return (
     <Card className="rounded-lg p-6" style={{backgroundColor: "#000"}}>
       {isLoading && <p>Loading...</p>}
-      <span className="text-white">{width} x {height}</span>
       <ActivityCalendar 
         data={width < 650 ? activity.slice(200) : activity} 
         loading={isLoading} 

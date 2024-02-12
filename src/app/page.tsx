@@ -5,7 +5,6 @@ import { Avatar } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SocialLink from '@/components/misc/SocialLink';
 import SectionTitle from '@/components/misc/SectionTitle';
-import ActivityCalendar from 'react-activity-calendar';
 import GithubActivityCalendar from '@/components/calendar';
 
 function BlueSkyIcon() {

@@ -10,8 +10,8 @@ class Activity(TypedDict):
   level: int
 
 def scrape_github_activities(html: str) -> list[Activity]:
-  r1 = re.findall('data-date.+data-level="\d"', html)
-  r2 = re.findall('>.+ contributions? on .+\.', html)
+  r1 = re.findall(r'data-date.+data-level="\d"', html)
+  r2 = re.findall(r'>.+ contributions? on .+\.', html)
   activities: list[Activity] = []
   for td, tooltip in zip(r1, r2):
     date: str = re.findall('data-date="....-..-.."', td)[0].split('"')[1]

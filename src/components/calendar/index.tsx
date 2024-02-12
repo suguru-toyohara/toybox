@@ -3,17 +3,10 @@ import { useState, useEffect } from "react";
 import { Card, Tooltip } from "@mui/material";
 import ActivityCalendar from "react-activity-calendar";
 import { Activity, ThemeInput } from "@/types/calendar";
-import { GET } from "@/app/api/v1/mock/getActivity/route";
 
 const theme: ThemeInput = {
   light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
   dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
-};
-
-const fetchActivityData = async () => {
-  const response: Response = await GET();
-  const data: Activity[] = await response.json();
-  return data;
 };
 
 export default function GithubActivityCalendar() {
@@ -24,8 +17,11 @@ export default function GithubActivityCalendar() {
     // 非同期関数を呼び出してデータを取得
     const loadData = async () => {
       try {
-        const data = await fetchActivityData();
+        console.log("fetching...")
+        const r = await fetch("/api/v1/github/get_activity")
+        const data: Activity[] = await r.json(); // データを取得
         setActivity(data); // データを状態にセット
+        console.log("fetched")
       } catch (error) {
         console.error('データの取得中にエラーが発生しました', error);
       } finally {

@@ -1,5 +1,5 @@
-name = "github-activity-cache"
-main = "backend/workers/github-activity-cache/index.ts"
+name = "simeji-toybox-backend-workers"
+main = "backend/workers/index.ts"
 compatibility_date = "2024-02-08"
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
@@ -10,9 +10,6 @@ compatibility_date = "2024-02-08"
 
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/workers/runtime-apis/kv
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 # Bind an R2 Bucket. Use R2 to store arbitrarily large blobs of data, such as files.
 # Docs: https://developers.cloudflare.com/r2/api/workers/workers-api-usage/

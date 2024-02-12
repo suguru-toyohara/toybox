@@ -8,7 +8,8 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
-import route from "./router";
+import router from "./router";
+import methodType from "./types";
 
 export interface Env {
 	// Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
@@ -26,8 +27,20 @@ export interface Env {
 	// Example binding to a Queue. Learn more at https://developers.cloudflare.com/queues/javascript-apis/
 	// MY_QUEUE: Queue;
 }
+
+function checkMethod(value: string): methodType {
+  return methodType[value as keyof typeof methodType];
+}
+
 async function fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-  const action = route(request)
+  const url: URL = new URL(request.url)
+  const endpoint = url.pathname
+  try {
+    checkMethod(request.method)
+  }catch{
+    return new Response("bad request.", {status: 400})
+  }
+  const action = router(endpoint, request.method as methodType)
 	return action(request)
 }
 

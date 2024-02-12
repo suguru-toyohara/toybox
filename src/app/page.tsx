@@ -14,7 +14,7 @@ function BlueSkyIcon() {
 export default function Home() {
   const router = useRouter();
   return (
-    <main className="flex min-w-max flex-col items-center p-24 min-h-screen">
+    <main className="flex flex-col items-center p-24 min-h-screen">
       <h1 className="text-4xl">Welcome to the toybox!</h1>
       <p className="text-lg m-4"> This is a portfolio site of suguru-toyohara(simeji).</p>
       <Avatar sx={{ width: 100, height: 100, bgcolor: 'black', border: '1px solid #CCC' }} className="m-8">

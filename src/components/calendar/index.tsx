@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Card, Tooltip } from "@mui/material";
 import ActivityCalendar from "react-activity-calendar";
 import { Activity, ThemeInput } from "@/types/calendar";
+import useWindowSize from "@/utils/useWindowSize";
 
 const theme: ThemeInput = {
   light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
@@ -10,7 +11,7 @@ const theme: ThemeInput = {
 };
 
 export default function GithubActivityCalendar({username}: {username: string}) {
-
+  const [width, height] = useWindowSize();
   const [activity, setActivity] = useState<Activity[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -32,10 +33,14 @@ export default function GithubActivityCalendar({username}: {username: string}) {
 
   return (
     <Card className="rounded-lg p-6" style={{backgroundColor: "#000"}}>
+      {isLoading && <p>Loading...</p>}
+      <span className="text-white">{width} x {height}</span>
       <ActivityCalendar 
-        data={activity} 
+        data={width < 650 ? activity.slice(200) : activity} 
         loading={isLoading} 
         theme={theme} 
+        blockMargin={ width < 1024 ? 3 : 4}
+        blockSize={ width < 1024 ? 8 : 12}
         colorScheme="dark" 
         style={{ color: "#FFF"}}
         renderBlock={(block, activity) => (

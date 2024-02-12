@@ -11,6 +11,7 @@ async function fetchActivity(endpoint: string): Promise<Activity[]> {
 
 export default async function activities(request: Request, env: Env): Promise<Response> {
   const username = new URL(request.url).searchParams.get("username")
+  // バリデーション
   if (!username) {
     return new Response("Bad request.", {status : 400})
   }

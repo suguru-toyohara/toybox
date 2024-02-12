@@ -23,7 +23,7 @@ export default function Header(){
       </HeaderSection>
       <HeaderSection>
         <Tab title="Overview" href="/" Icon={DescriptionIcon}/>
-        <Tab title="github" href="/github" Icon={AppsIcon}/>
+        <Tab title="GithubCalendar" href="/github" Icon={AppsIcon}/>
       </HeaderSection>
       <FullDivider />
     </header>

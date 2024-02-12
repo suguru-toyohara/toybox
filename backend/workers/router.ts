@@ -2,6 +2,7 @@ import methodType from "./types";
 import activities from "./github/activities";
 import { Env } from ".";
 import getKV from "./kv/get";
+import putKV from "./kv/put";
 
 async function notfound(request: Request, env: Env): Promise<Response> {
   const endpoint = new URL(request.url).pathname
@@ -14,6 +15,8 @@ export default function router(endpoint: string, method: methodType ): (request:
       return activities;
     case '/kv/get':
       return getKV;
+    case '/kv/put':
+      return putKV;
     default:
       return notfound;
   }

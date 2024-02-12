@@ -14,6 +14,8 @@ def GET(username):
   try:
     activities = main(username)
     return activities, 200
+  except ValueError as e:
+    return {"error": str(e)}, 404
   except Exception as e:
     return {"error": str(e)}, 500
 

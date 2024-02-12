@@ -28,7 +28,7 @@ export default function Home() {
         href="https://bsky.app/profile/simeji.aceof.technology"
       />
       <SectionTitle title="Github Contribution" />
-      <GithubActivityCalendar />
+      <GithubActivityCalendar username='suguru-toyohara'/>
     </main>
   );
 }

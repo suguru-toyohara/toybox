@@ -9,7 +9,7 @@ const theme: ThemeInput = {
   dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
 };
 
-export default function GithubActivityCalendar() {
+export default function GithubActivityCalendar({username}: {username: string}) {
 
   const [activity, setActivity] = useState<Activity[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -17,11 +17,9 @@ export default function GithubActivityCalendar() {
     // 非同期関数を呼び出してデータを取得
     const loadData = async () => {
       try {
-        console.log("fetching...")
-        const r = await fetch("/api/v1/github/get_activity")
+        const r = await fetch(`/api/v1/github/get_activity?username=${username}`); // データを取得
         const data: Activity[] = await r.json(); // データを取得
         setActivity(data); // データを状態にセット
-        console.log("fetched")
       } catch (error) {
         console.error('データの取得中にエラーが発生しました', error);
       } finally {

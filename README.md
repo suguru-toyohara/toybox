@@ -1,6 +1,6 @@
 # Toybox
 
-https://www.simeji.aceof.technology
+https://simeji.aceof.technology
 
 
 ## Objective of this repository
